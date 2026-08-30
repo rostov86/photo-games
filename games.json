@@ -1,5 +1,12 @@
 [
   {
+    "id": "greli-bloki",
+    "title": "Грели-Блоки",
+    "blurb": "Собирай полные ряды. Управление свайпами.",
+    "url": "https://rostov86.github.io/greli-bloki/",
+    "accent": "#ff5a6a"
+  },
+  {
     "id": "roll-climb",
     "title": "Ролл вверх",
     "blurb": "Кати ролл вверх по ленте. Не врезайся.",
