@@ -1,0 +1,38 @@
+[
+  {
+    "id": "roll-climb",
+    "title": "Ролл вверх",
+    "blurb": "Кати ролл вверх по ленте. Не врезайся.",
+    "url": "https://rostov86.github.io/roll-climb/",
+    "site": "https://photo-rostov.ru/roll-climb",
+    "accent": "#FF931E"
+  },
+  {
+    "id": "roll-tower",
+    "title": "Башня роллов",
+    "blurb": "Тапай, когда ролл над башней.",
+    "url": "https://rostov86.github.io/roll-tower/",
+    "accent": "#7ec8f0"
+  },
+  {
+    "id": "irkutsk-quiz",
+    "title": "Иркутск любимый город",
+    "blurb": "Фото-квиз по родному городу.",
+    "url": "https://rostov86.github.io/irkutsk-quiz/",
+    "accent": "#c4a05a"
+  },
+  {
+    "id": "shanghai-detective",
+    "title": "Тайна Шанхая",
+    "blurb": "Детективное расследование в Шанхае.",
+    "url": "https://rostov86.github.io/shanghai-detective/",
+    "accent": "#b89a7a"
+  },
+  {
+    "id": "quizpleasegame",
+    "title": "Шанхайский миллионер",
+    "blurb": "Квиз в духе «кто хочет стать миллионером».",
+    "url": "https://rostov86.github.io/quizpleasegame/",
+    "accent": "#d4af37"
+  }
+]

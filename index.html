@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <title>Игры — photo-rostov.ru</title>
+  <meta name="description" content="Мини-игры Александра Ростова. Играть в Telegram и в браузере." />
+  <link rel="icon" href="./icon-192.jpg" />
+  <link rel="apple-touch-icon" href="./icon-192.jpg" />
+  <script src="./telegram-web-app.js"></script>
+  <script src="./tg-mini.js"></script>
+  <style>
+    :root {
+      --bg: var(--tg-theme-bg-color, #111111);
+      --card: #1a1a1a;
+      --text: var(--tg-theme-text-color, #f4f1ea);
+      --muted: var(--tg-theme-hint-color, #a39b8f);
+      --line: rgba(255, 255, 255, 0.08);
+      --accent: #d4af7a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+    body {
+      padding:
+        calc(18px + env(safe-area-inset-top, 0px))
+        18px
+        calc(28px + env(safe-area-inset-bottom, 0px));
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    header {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+    header img {
+      width: 72px;
+      height: 72px;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+    }
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    h1 { font-size: 28px; line-height: 1.1; font-weight: 750; }
+    .sub { margin-top: 6px; color: var(--muted); font-size: 14px; }
+    .list { display: grid; gap: 10px; }
+    a.card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 16px 16px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    a.card::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 4px;
+      background: var(--game-accent, var(--accent));
+    }
+    a.card h2 { font-size: 18px; font-weight: 700; margin-bottom: 4px; }
+    a.card p { color: var(--muted); font-size: 13px; line-height: 1.35; }
+    a.card .go {
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--game-accent, var(--accent));
+    }
+    footer {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 12px;
+      text-align: center;
+    }
+    footer a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="./icon.jpg" alt="Игры photo-rostov" />
+    <div>
+      <div class="eyebrow">photo-rostov.ru</div>
+      <h1>Игры</h1>
+      <p class="sub">Нажми карточку — игра откроется здесь же.</p>
+    </div>
+  </header>
+  <div class="list" id="list"></div>
+  <footer>
+    Александр Ростов · <a href="https://photo-rostov.ru/" target="_blank" rel="noopener">сайт</a>
+  </footer>
+  <script>
+    const GAMES = [
+      { title: "Ролл вверх", blurb: "Кати ролл вверх по ленте. Не врезайся.", url: "https://rostov86.github.io/roll-climb/", accent: "#FF931E" },
+      { title: "Башня роллов", blurb: "Тапай, когда ролл над башней.", url: "https://rostov86.github.io/roll-tower/", accent: "#7ec8f0" },
+      { title: "Иркутск любимый город", blurb: "Фото-квиз по родному городу.", url: "https://rostov86.github.io/irkutsk-quiz/", accent: "#c4a05a" },
+      { title: "Тайна Шанхая", blurb: "Детективное расследование в Шанхае.", url: "https://rostov86.github.io/shanghai-detective/", accent: "#b89a7a" },
+      { title: "Шанхайский миллионер", blurb: "Квиз в духе «кто хочет стать миллионером».", url: "https://rostov86.github.io/quizpleasegame/", accent: "#d4af37" }
+    ];
+    const list = document.getElementById("list");
+    list.innerHTML = GAMES.map((g) => `
+      <a class="card" href="${g.url}" style="--game-accent:${g.accent}">
+        <h2>${g.title}</h2>
+        <p>${g.blurb}</p>
+        <div class="go">Играть</div>
+      </a>
+    `).join("");
+  </script>
+</body>
+</html>
