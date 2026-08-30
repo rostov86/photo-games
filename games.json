@@ -34,5 +34,12 @@
     "blurb": "Квиз в духе «кто хочет стать миллионером».",
     "url": "https://rostov86.github.io/quizpleasegame/",
     "accent": "#d4af37"
+  },
+  {
+    "id": "tetris",
+    "title": "Тетрис",
+    "blurb": "Классика: линии, уровни, ghost-piece.",
+    "url": "https://rostov86.github.io/tetris/",
+    "accent": "#e94560"
   }
 ]
